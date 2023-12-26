@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/index.css') }}" />
 @endsection
 @section('content')
-打刻ページ
+<p>{{$user_name}}さんお疲れ様です！</p>
 
 <form action="/start_worktime" method="post">
     @csrf

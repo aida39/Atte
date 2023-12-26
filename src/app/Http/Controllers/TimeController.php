@@ -13,6 +13,7 @@ class TimeController extends Controller
     public function index()
     {
         $user = Auth::user();
+        $user_name = $user->name;
         $date = Carbon::now()->toDateString();
         $date_record = Worktime::where('user_id', $user->id)->latest('date_worktime')->pluck('date_worktime')->first();
         if ($date == $date_record) {
@@ -46,13 +47,21 @@ class TimeController extends Controller
             $start_breaktime = 'disabled';
             $end_breaktime = 'disabled';
         }
-
-        return view('index', compact('start_worktime', 'end_worktime', 'start_breaktime', 'end_breaktime'));
+        return view('index', compact('user_name', 'start_worktime', 'end_worktime', 'start_breaktime', 'end_breaktime'));
     }
 
-    public function list()
+    public function attendance(Request $request = null)
     {
-        return view('attendance');
+        $date = Carbon::now()->toDateString();
+        $request = $request ?: request();
+        $worktimes = Worktime::with('user', 'breaktimes')->where('date_worktime', $request->input('date') ?? $date)->get();
+        foreach ($worktimes as $worktime) {
+            $current_day = $worktime->date_worktime;
+        }
+        $previous_day = Carbon::parse($current_day)->modify('-1 days')->format('Y-m-d');
+        $next_day = Carbon::parse($current_day)->modify('1 days')->format('Y-m-d');
+
+        return view('attendance', compact('worktimes', 'current_day', 'previous_day', 'next_day'));
     }
 
     public function start_worktime()

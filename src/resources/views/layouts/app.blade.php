@@ -15,12 +15,13 @@
     <header class="header">
         <div class="header__inner">
             <div class="header-utilities">
-                <a class="header__logo" href="/">
+                <h1 class="header__logo">
                     Atte
-                </a>
+                </h1>
+
                 <nav>
-                    @if (Auth::check())
                     <ul class="header-nav">
+                        @if (Auth::check())
                         <li class="header-nav__item">
                             <a class="header-nav__link" href="/">ホーム</a>
                         </li>
@@ -33,8 +34,8 @@
                                 <button class="header-nav__button">ログアウト</button>
                             </form>
                         </li>
+                        @endif
                     </ul>
-                    @endif
                 </nav>
             </div>
         </div>
@@ -43,6 +44,10 @@
     <main>
         @yield('content')
     </main>
+
+    <footer class="footer">
+        <small class="copyright">Atte, inc.</small>
+    </footer>
 </body>
 
 </html>

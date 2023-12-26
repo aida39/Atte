@@ -17,6 +17,6 @@ class Breaktime extends Model
 
     public function worktime()
     {
-        $this->belongsTo('App\Models\Worktime');
+        $this->belongsTo(Worktime::class);
     }
 }

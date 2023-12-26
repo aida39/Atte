@@ -15,11 +15,11 @@ use App\Http\Controllers\TimeController;
 */
 Route::middleware('auth')->group(function () {
     Route::get('/', [TimeController::class, 'index']);
+    Route::get('/attendance', [TimeController::class, 'attendance']);
+
 });
 
-Route::get('/attendance', [TimeController::class, 'list']);
 Route::post('/start_worktime', [TimeController::class, 'start_worktime']);
 Route::post('/end_worktime', [TimeController::class, 'end_worktime']);
 Route::post('/start_breaktime', [TimeController::class, 'start_breaktime']);
 Route::post('/end_breaktime', [TimeController::class, 'end_breaktime']);
-
