@@ -50,18 +50,19 @@ class TimeController extends Controller
         return view('index', compact('user_name', 'start_worktime', 'end_worktime', 'start_breaktime', 'end_breaktime'));
     }
 
-    public function attendance(Request $request = null)
+    public function attendance(Request $request)
     {
-        $date = Carbon::now()->toDateString();
-        $request = $request ?: request();
-        $worktimes = Worktime::with('user', 'breaktimes')->where('date_worktime', $request->input('date') ?? $date)->get();
-        foreach ($worktimes as $worktime) {
-            $current_day = $worktime->date_worktime;
-        }
-        $previous_day = Carbon::parse($current_day)->modify('-1 days')->format('Y-m-d');
-        $next_day = Carbon::parse($current_day)->modify('1 days')->format('Y-m-d');
+        $date = $request->input('date', Carbon::now()->toDateString());
+        $page = $request->input('page', 1);
 
-        return view('attendance', compact('worktimes', 'current_day', 'previous_day', 'next_day'));
+        $worktimes = Worktime::with('user', 'breaktimes')->where('date_worktime', $date)->paginate(5, ['*'], 'page', $page)->withQueryString();
+
+
+        $current_day = $date;
+        $previous_day = Carbon::parse($current_day)->copy()->subDay()->toDateString();
+        $next_day = Carbon::parse($current_day)->copy()->addDay()->toDateString();
+
+        return view('attendance', compact('worktimes','current_day', 'previous_day', 'next_day'));
     }
 
     public function start_worktime()

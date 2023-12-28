@@ -15,7 +15,7 @@ use App\Http\Controllers\TimeController;
 */
 Route::middleware('auth')->group(function () {
     Route::get('/', [TimeController::class, 'index']);
-    Route::get('/attendance', [TimeController::class, 'attendance']);
+    Route::get('/attendance', [TimeController::class, 'attendance'])->name('show_date');
 
 });
 

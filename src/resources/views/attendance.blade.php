@@ -7,11 +7,11 @@
 <div class="container">
     <div class="content__date">
         <span>
-            <a href="/attendance?date={{$previous_day}}">&lt;</a>
+            <a href="{{ route('show_date', ['date' => $previous_day]) }}">&lt;</a>
         </span>
         {{$current_day}}
         <span>
-            <a href="/attendance?date={{$next_day}}">&gt;</a>
+            <a href="{{ route('show_date', ['date' => $next_day]) }}">&gt;</a>
         </span>
 
     </div>
@@ -31,15 +31,27 @@
                 <td>{{ $worktime['end_worktime'] }}</td>
 
                 <td>
+                    @php
+                    $sum_breaktime=0;
+                    @endphp
+
                     @foreach($worktime->breaktimes as $breaktime)
                     @php
                     $start_breaktime =\Carbon\Carbon::parse($breaktime['start_breaktime']);
                     $end_breaktime =\Carbon\Carbon::parse($breaktime['end_breaktime']);
-                    $sum_breaktime = $start_breaktime->diff($end_breaktime);
-
+                    $diff_breaktime = $start_breaktime->diffInSeconds($end_breaktime);
+                    $sum_breaktime += $diff_breaktime;
                     @endphp
-                    {{$sum_breaktime->format('%H:%I:%S')}}
                     @endforeach
+
+                    @php
+                    $hours = floor($sum_breaktime / 3600);
+                    $minutes = floor(($sum_breaktime % 3600) / 60);
+                    $seconds = $sum_breaktime % 60;
+                    $formatted_breaktime = sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
+                    @endphp
+                    {{$formatted_breaktime}}
+                </td>
                 </td>
 
                 <td>
@@ -54,6 +66,6 @@
             @endforeach
         </table>
     </div>
-    <div class="content__pagination"></div>
+    <div class="content__pagination">{{ $worktimes->links() }}</div>
 </div>
 @endsection
