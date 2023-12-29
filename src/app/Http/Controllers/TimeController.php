@@ -62,7 +62,7 @@ class TimeController extends Controller
         $previous_day = Carbon::parse($current_day)->copy()->subDay()->toDateString();
         $next_day = Carbon::parse($current_day)->copy()->addDay()->toDateString();
 
-        return view('attendance', compact('worktimes','current_day', 'previous_day', 'next_day'));
+        return view('attendance', compact('worktimes', 'current_day', 'previous_day', 'next_day'));
     }
 
     public function start_worktime()

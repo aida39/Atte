@@ -58,9 +58,17 @@
                     @php
                     $start_worktime =\Carbon\Carbon::parse($worktime['start_worktime']);
                     $end_worktime =\Carbon\Carbon::parse($worktime['end_worktime']);
-                    $total_worktime =$start_worktime->diff($end_worktime);
+                    $diff_worktime =$start_worktime->diffInSeconds($end_worktime);
+                    $sum_worktime = $diff_worktime-$sum_breaktime;
+
+                    $hours = floor($sum_worktime / 3600);
+                    $minutes = floor(($sum_worktime % 3600) / 60);
+                    $seconds = $sum_worktime % 60;
+                    $formatted_worktime = sprintf("%02d:%02d:%02d", $hours, $minutes, $seconds);
+
                     @endphp
-                    {{$total_worktime->format('%H:%I:%S')}}
+                    {{$formatted_worktime}}
+
                 </td>
             </tr>
             @endforeach
