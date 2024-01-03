@@ -47,6 +47,8 @@ class TimeController extends Controller
             $start_breaktime = 'disabled';
             $end_breaktime = 'disabled';
         }
+
+
         return view('index', compact('user_name', 'start_worktime', 'end_worktime', 'start_breaktime', 'end_breaktime'));
     }
 

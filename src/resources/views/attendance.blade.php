@@ -1,23 +1,24 @@
 @extends('layouts.app')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/index.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/attendance.css') }}" />
 @endsection
 @section('content')
 
 <div class="container">
     <div class="content__date">
-        <span>
+        <span class="content__date--block">
             <a href="{{ route('show_date', ['date' => $previous_day]) }}">&lt;</a>
         </span>
-        {{$current_day}}
-        <span>
+        <span class="content__date-display">
+            {{$current_day}}
+        </span>
+        <span class="content__date--block">
             <a href="{{ route('show_date', ['date' => $next_day]) }}">&gt;</a>
         </span>
-
     </div>
     <div class="content__attendance">
-        <table>
-            <tr>
+        <table class="content__table">
+            <tr class="content__table-row">
                 <th>名前</th>
                 <th>勤務開始</th>
                 <th>勤務終了</th>
@@ -25,7 +26,7 @@
                 <th>勤務時間</th>
             </tr>
             @foreach($worktimes as $worktime)
-            <tr>
+            <tr class="content__table-row">
                 <td>{{ $worktime['user']['name'] }}</td>
                 <td>{{ $worktime['start_worktime'] }}</td>
                 <td>{{ $worktime['end_worktime'] }}</td>

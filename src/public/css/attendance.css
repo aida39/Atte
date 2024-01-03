@@ -1,0 +1,43 @@
+.container {}
+
+.content__date {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.content__date--block {
+    display: inline-block;
+
+    background-color: #fff;
+    border: 1px solid #214be0;
+    margin: 0 30px;
+    padding: 1px 14px;
+}
+
+.content__date--block a {
+    font-size: 18px;
+    font-weight: bold;
+    color: #214be0;
+    text-decoration: none;
+
+}
+
+.content__date-display {
+    display: inline-block;
+    font-size: 20px;
+}
+
+.content__attendance {
+    text-align: center;
+}
+
+.content__table {
+    width: 80%;
+    margin: 10px auto;
+}
+
+.content__table-row {
+    height: 70px;
+    border-top: 1px solid #838383;
+
+}

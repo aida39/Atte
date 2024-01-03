@@ -1,0 +1,33 @@
+
+
+.container {
+    width: 100%;
+
+}
+
+.menu__message {
+    text-align: center;
+    font-size: 23px;
+    font-weight: bold;
+    padding-top: 30px;
+}
+
+.menu__button-area {
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+.menu__button {
+    margin: 20px;
+    width: 500px;
+    height: 200px;
+    font-size: 23px;
+    font-weight: bold;
+    background-color: #fff;
+    border: none;
+    border-radius: 5px;
+}
