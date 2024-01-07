@@ -1,4 +1,6 @@
-.container {}
+.container {
+    height: 85vh;
+}
 
 .content__date {
     padding: 40px 0;
@@ -40,4 +42,10 @@
     height: 70px;
     border-top: 1px solid #838383;
 
+}
+
+.content__pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
 }

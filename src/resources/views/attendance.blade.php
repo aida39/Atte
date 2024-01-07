@@ -1,20 +1,25 @@
 @extends('layouts.app')
 @section('css')
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="{{ asset('css/attendance.css') }}" />
 @endsection
-@section('content')
 
+@section('content')
 <div class="container">
     <div class="content__date">
-        <span class="content__date--block">
-            <a href="{{ route('show_date', ['date' => $previous_day]) }}">&lt;</a>
-        </span>
+        <a href="{{ route('show_date', ['date' => $previous_day]) }}">
+            <span class="content__date--block">
+                &lt;
+            </span>
+        </a>
         <span class="content__date-display">
             {{$current_day}}
         </span>
-        <span class="content__date--block">
-            <a href="{{ route('show_date', ['date' => $next_day]) }}">&gt;</a>
-        </span>
+        <a href="{{ route('show_date', ['date' => $next_day]) }}">
+            <span class="content__date--block">
+                &gt;
+            </span>
+        </a>
     </div>
     <div class="content__attendance">
         <table class="content__table">
@@ -75,6 +80,7 @@
             @endforeach
         </table>
     </div>
-    <div class="content__pagination">{{ $worktimes->links() }}</div>
+
+    <div class="content__pagination">{{ $worktimes->links('vendor.pagination.default') }}</div>
 </div>
 @endsection
