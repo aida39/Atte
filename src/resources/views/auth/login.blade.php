@@ -5,6 +5,11 @@
 @endsection
 
 @section('content')
+@if (session('message'))
+<div class="register-message">
+    {{ session('register-message') }}
+</div>
+@endif
 <div class="login__content">
     <div class="login-form__heading">
         <h1>ログイン</h1>

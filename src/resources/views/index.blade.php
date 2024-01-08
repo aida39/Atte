@@ -10,28 +10,28 @@
     </div>
 
     <div class="menu__button-area">
-        <form action="/start_worktime" method="post">
+        <form action="/worktime/start" method="post">
             @csrf
             <button class='menu__button' type="submit" @disabled(filled($start_worktime))>
                 勤務開始
             </button>
         </form>
 
-        <form action="/end_worktime" method="post">
+        <form action="/worktime/end" method="post">
             @csrf
             <button class='menu__button' type="submit" @disabled(filled($end_worktime))>
                 勤務終了
             </button>
         </form>
 
-        <form action="/start_breaktime" method="post">
+        <form action="/breaktime/start" method="post">
             @csrf
             <button class='menu__button' type="submit" @disabled(filled($start_breaktime))>
                 休憩開始
             </button>
         </form>
 
-        <form action="/end_breaktime" method="post">
+        <form action="/breaktime/end" method="post">
             @csrf
             <button class='menu__button' type="submit" @disabled(filled($end_breaktime))>
                 休憩終了

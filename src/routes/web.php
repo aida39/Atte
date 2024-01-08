@@ -19,7 +19,7 @@ Route::middleware('auth')->group(function () {
 
 });
 
-Route::post('/start_worktime', [TimeController::class, 'start_worktime']);
-Route::post('/end_worktime', [TimeController::class, 'end_worktime']);
-Route::post('/start_breaktime', [TimeController::class, 'start_breaktime']);
-Route::post('/end_breaktime', [TimeController::class, 'end_breaktime']);
+Route::post('/worktime/start', [TimeController::class, 'start_worktime']);
+Route::post('/worktime/end', [TimeController::class, 'end_worktime']);
+Route::post('/breaktime/start', [TimeController::class, 'start_breaktime']);
+Route::post('/breaktime/end', [TimeController::class, 'end_breaktime']);
