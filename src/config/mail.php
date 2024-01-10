@@ -45,6 +45,11 @@ return [
             'auth_mode' => null,
         ],
 
+        'from' => [
+            'address' => env('MAIL_FROM_ADDRESS', 'from@example.com'),
+            'name' => env('MAIL_FROM_NAME', 'Your Name'),
+        ],
+
         'ses' => [
             'transport' => 'ses',
         ],

@@ -12,6 +12,13 @@ use Illuminate\Support\Facades\RateLimiter;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use Laravel\Fortify\Fortify;
+use App\Mail\CustomVerificationEmail;
+use Illuminate\Support\Facades\Lang;
+use Illuminate\Notifications\Messages\MailMessage;
+use Illuminate\Auth\Notifications\VerifyEmail;
+
+
+
 
 class FortifyServiceProvider extends ServiceProvider
 {
@@ -42,5 +49,12 @@ class FortifyServiceProvider extends ServiceProvider
             $email = (string) $request->email;
             return Limit::perMinute(10)->by($email . $request->ip());
         });
+
+        VerifyEmail::toMailUsing(function ($notifiable, $url) {
+            return (new  MailMessage)
+                ->subject(Lang::get('ユーザー登録のご確認 [Atte勤怠管理システム]'))
+                ->view('vendor.mail.VerifyEmail', ['url' => $url]);
+        });
+
     }
 }

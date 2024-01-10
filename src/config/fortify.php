@@ -2,6 +2,10 @@
 
 use App\Providers\RouteServiceProvider;
 use Laravel\Fortify\Features;
+use App\Notifications\VerifyEmail;
+use Illuminate\Contracts\Auth\MustVerifyEmail;
+
+
 
 return [
 
@@ -147,7 +151,7 @@ return [
     'features' => [
         Features::registration(),
         Features::resetPasswords(),
-        // Features::emailVerification(),
+        Features::emailVerification(),
         Features::updateProfileInformation(),
         Features::updatePasswords(),
         Features::twoFactorAuthentication([
