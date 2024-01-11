@@ -56,5 +56,6 @@ class FortifyServiceProvider extends ServiceProvider
                 ->view('vendor.mail.VerifyEmail', ['url' => $url]);
         });
 
+        Fortify::viewPrefix('auth.');
     }
 }

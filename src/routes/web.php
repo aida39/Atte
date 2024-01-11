@@ -13,10 +13,9 @@ use App\Http\Controllers\TimeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware('auth')->group(function () {
+Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [TimeController::class, 'index']);
     Route::get('/attendance', [TimeController::class, 'attendance'])->name('show_date');
-
 });
 
 Route::post('/worktime/start', [TimeController::class, 'start_worktime']);
