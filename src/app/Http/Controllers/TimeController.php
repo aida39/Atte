@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Worktime;
 use App\Models\Breaktime;
+use App\Models\User;
 use Carbon\Carbon;
 
 class TimeController extends Controller
@@ -66,6 +67,12 @@ class TimeController extends Controller
         $next_day = Carbon::parse($current_day)->copy()->addDay()->toDateString();
 
         return view('attendance', compact('worktimes', 'current_day', 'previous_day', 'next_day'));
+    }
+
+    public function user()
+    {
+        $users = User::all();
+        return view('user' , compact('users'));
     }
 
     public function start_worktime()

@@ -1,0 +1,33 @@
+.container {
+    height: 80vh;
+}
+
+.content__heading {
+    font-size: 12px;
+    padding: 20px 0;
+}
+
+
+.content__user-list {
+    text-align: center;
+}
+
+.content__table {
+    width: 40%;
+    margin: 10px auto;
+}
+
+.content__table-row {
+    height: 70px;
+    border-top: 1px solid #838383;
+}
+
+.content__table-link {
+    color: #333;
+}
+
+.content__pagination {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
