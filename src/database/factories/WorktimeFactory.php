@@ -22,7 +22,7 @@ class WorktimeFactory extends Factory
 
         return [
             'user_id' => $this->faker->numberBetween(1, 5),
-            'date_worktime' => $this->faker->dateTimeBetween('2024-01-01', '2024-01-03'),
+            'date_worktime' => $this->faker->dateTimeBetween('2024-01-01', '2024-01-04'),
             'start_worktime' => $start_worktime,
             'end_worktime' => $this->faker->datetimeBetween($start_worktime, '23:59:59'),
         ];

@@ -79,7 +79,8 @@ class TimeController extends Controller
     {
         $id = $request->input('id');
         $user = User::find($id);
-        $worktimes = Worktime::with('user', 'breaktimes')->where('user_id', $id)->get();
+        $page = $request->input('page', 1);
+        $worktimes = Worktime::with('user', 'breaktimes')->where('user_id', $id)->paginate(5, ['*'], 'page', $page)->withQueryString();
         return view('user_attendance', compact('user', 'worktimes'));
     }
 
