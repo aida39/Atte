@@ -17,6 +17,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('/', [TimeController::class, 'index']);
     Route::get('/attendance', [TimeController::class, 'attendance'])->name('show_date');
     Route::get('/user', [TimeController::class, 'user']);
+    Route::get('/user/attendance', [TimeController::class, 'user_attendance']);
 });
 
 Route::post('/worktime/start', [TimeController::class, 'start_worktime']);

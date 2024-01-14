@@ -71,8 +71,16 @@ class TimeController extends Controller
 
     public function user()
     {
-        $users = User::all();
-        return view('user' , compact('users'));
+        $users = User::paginate(5);
+        return view('user', compact('users'));
+    }
+
+    public function user_attendance(Request $request)
+    {
+        $id = $request->input('id');
+        $user = User::find($id);
+        $worktimes = Worktime::with('user', 'breaktimes')->where('user_id', $id)->get();
+        return view('user_attendance', compact('user', 'worktimes'));
     }
 
     public function start_worktime()

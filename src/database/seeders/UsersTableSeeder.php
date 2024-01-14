@@ -88,7 +88,7 @@ class UsersTableSeeder extends Seeder
         ];
         DB::table('users')->insert($param);
 
-        Worktime::factory()->count(5)->create();
+        Worktime::factory()->count(30)->create();
 
     }
 }
