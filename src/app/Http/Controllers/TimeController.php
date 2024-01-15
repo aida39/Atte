@@ -12,6 +12,12 @@ use Carbon\Carbon;
 
 class TimeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('verified');
+    }
+
     public function index()
     {
         $user = Auth::user();

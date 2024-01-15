@@ -6,7 +6,6 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
-use App\Models\Worktime;
 
 class UsersTableSeeder extends Seeder
 {
@@ -130,5 +129,47 @@ class UsersTableSeeder extends Seeder
             'end_worktime' => '21:39:09',
         ];
         DB::table('worktimes')->insert($param);
+
+        $param = [
+            'user_id' => 1,
+            'date_worktime' => '2024-01-02',
+            'start_worktime' => '09:00:14',
+            'end_worktime' => '13:50:32',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 4,
+            'date_worktime' => '2024-01-02',
+            'start_worktime' => '09:11:54',
+            'end_worktime' => '20:39:00',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 9,
+            'date_worktime' => '2024-01-02',
+            'start_worktime' => '08:30:34',
+            'end_worktime' => '21:00:00',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 10,
+            'date_worktime' => '2024-01-03',
+            'start_worktime' => '09:30:34',
+            'end_worktime' => '20:00:11',
+        ];
+        DB::table('worktimes')->insert($param);
+
+        $param = [
+            'worktime_id' => 1,
+            'start_breaktime' => '12:00:54',
+            'end_breaktime' => '12:59:50',
+        ];
+        DB::table('breaktimes')->insert($param);
+        $param = [
+            'worktime_id' => 3,
+            'start_breaktime' => '12:30:24',
+            'end_breaktime' => '13:39:50',
+        ];
+        DB::table('breaktimes')->insert($param);
     }
 }

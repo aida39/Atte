@@ -13,14 +13,15 @@ use App\Http\Controllers\TimeController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::middleware(['auth', 'verified'])->group(function () {
-    Route::get('/', [TimeController::class, 'index']);
-    Route::get('/attendance', [TimeController::class, 'attendance'])->name('show_date');
-    Route::get('/user', [TimeController::class, 'user']);
-    Route::get('/user/attendance', [TimeController::class, 'user_attendance']);
-});
 
-Route::post('/worktime/start', [TimeController::class, 'start_worktime']);
-Route::post('/worktime/end', [TimeController::class, 'end_worktime']);
-Route::post('/breaktime/start', [TimeController::class, 'start_breaktime']);
-Route::post('/breaktime/end', [TimeController::class, 'end_breaktime']);
+Route::controller(TimeController::class)->group(function () {
+        Route::get('/', 'index');
+        Route::get('/attendance', 'attendance')->name('show_date');
+        Route::get('/user', 'user');
+        Route::get('/user/attendance', 'user_attendance');
+        Route::post('/worktime/start', 'start_worktime');
+        Route::post('/worktime/end', 'end_worktime');
+        Route::post('/breaktime/start', 'start_breaktime');
+        Route::post('/breaktime/end', 'end_breaktime');
+    }
+);
