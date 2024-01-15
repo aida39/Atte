@@ -88,7 +88,47 @@ class UsersTableSeeder extends Seeder
         ];
         DB::table('users')->insert($param);
 
-        Worktime::factory()->count(10)->create();
-
+        $param = [
+            'user_id' => 1,
+            'date_worktime' => '2024-01-01',
+            'start_worktime' => '09:00:54',
+            'end_worktime' => '23:59:59',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 2,
+            'date_worktime' => '2024-01-01',
+            'start_worktime' => '09:30:54',
+            'end_worktime' => '20:39:09',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 3,
+            'date_worktime' => '2024-01-01',
+            'start_worktime' => '08:30:34',
+            'end_worktime' => '21:00:33',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 4,
+            'date_worktime' => '2024-01-01',
+            'start_worktime' => '12:30:34',
+            'end_worktime' => '23:11:30',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 5,
+            'date_worktime' => '2024-01-01',
+            'start_worktime' => '10:17:16',
+            'end_worktime' => '20:51:42',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 6,
+            'date_worktime' => '2024-01-01',
+            'start_worktime' => '09:30:54',
+            'end_worktime' => '21:39:09',
+        ];
+        DB::table('worktimes')->insert($param);
     }
 }
