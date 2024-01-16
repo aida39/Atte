@@ -1,10 +1,6 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title></title>
-</head>
-
 <body>
     <p>※本メールは自動配信メールです。<br>
         以下URLにアクセスし、ユーザー登録を完了してください。</p>

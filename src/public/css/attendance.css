@@ -9,19 +9,17 @@
 
 .content__date--block {
     display: inline-block;
-
     background-color: #fff;
     border: 1px solid #214be0;
     margin: 0 30px;
     padding: 1px 14px;
 }
 
-.content__date--block a {
-    font-size: 18px;
+.content__date--block-link {
+    font-size: 16px;
     font-weight: bold;
     color: #214be0;
     text-decoration: none;
-
 }
 
 .content__date-display {
@@ -41,7 +39,6 @@
 .content__table-row {
     height: 70px;
     border-top: 1px solid #838383;
-
 }
 
 .content__pagination {

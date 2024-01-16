@@ -14,7 +14,7 @@ use App\Http\Controllers\TimeController;
 |
 */
 
-Route::controller(TimeController::class)->group(function () {
+Route::middleware('auth', 'verified')->controller(TimeController::class)->group(function () {
         Route::get('/', 'index');
         Route::get('/attendance', 'attendance')->name('show_date');
         Route::get('/user', 'user');

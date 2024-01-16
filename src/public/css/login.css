@@ -9,11 +9,11 @@
     margin-bottom: 40px;
 }
 
-.form__input--text {
+.form__input {
     margin-bottom: 30px;
 }
 
-.form__input--text input {
+.form__input-login {
     width: 350px;
     height: 40px;
     background-color: #f2f2f2;
@@ -42,6 +42,5 @@
 .register__button-submit {
     color: #214be0;
     font-size: 14px;
-
     text-decoration: none;
 }

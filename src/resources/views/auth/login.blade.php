@@ -5,11 +5,6 @@
 @endsection
 
 @section('content')
-@if (session('message'))
-<div class="register-message">
-    {{ session('register-message') }}
-</div>
-@endif
 <div class="login__content">
     <div class="login-form__heading">
         <h1>ログイン</h1>
@@ -18,8 +13,8 @@
         @csrf
         <div class="form__group">
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <input type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" />
+                <div class="form__input">
+                    <input class="form__input-login" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" />
                 </div>
                 <div class="form__error">
                     @error('email')
@@ -30,8 +25,8 @@
         </div>
         <div class="form__group">
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <input type="password" name="password" placeholder="パスワード" />
+                <div class="form__input">
+                    <input class="form__input-login" type="password" name="password" placeholder="パスワード" />
                 </div>
                 <div class="form__error">
                     @error('password')

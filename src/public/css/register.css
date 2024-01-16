@@ -9,11 +9,11 @@
     margin-bottom: 40px;
 }
 
-.form__input--text {
+.form__input {
     margin-bottom: 30px;
 }
 
-.form__input--text input {
+.form__input-register {
     width: 350px;
     height: 40px;
     background-color: #f2f2f2;

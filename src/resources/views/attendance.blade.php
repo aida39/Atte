@@ -7,7 +7,7 @@
 @section('content')
 <div class="container">
     <div class="content__date">
-        <a href="{{ route('show_date', ['date' => $previous_day]) }}">
+        <a class="content__date--block-link" href="{{ route('show_date', ['date' => $previous_day]) }}">
             <span class="content__date--block">
                 &lt;
             </span>
@@ -15,7 +15,7 @@
         <span class="content__date-display">
             {{$current_day}}
         </span>
-        <a href="{{ route('show_date', ['date' => $next_day]) }}">
+        <a class="content__date--block-link" href="{{ route('show_date', ['date' => $next_day]) }}">
             <span class="content__date--block">
                 &gt;
             </span>
@@ -35,7 +35,6 @@
                 <td>{{ $worktime['user']['name'] }}</td>
                 <td>{{ $worktime['start_worktime'] }}</td>
                 <td>{{ $worktime['end_worktime'] }}</td>
-
                 <td>
                     @php
                     $sum_breaktime=0;
@@ -58,7 +57,6 @@
                     @endphp
                     {{$formatted_breaktime}}
                 </td>
-
                 <td>
                     @php
                     $start_worktime =\Carbon\Carbon::parse($worktime['start_worktime']);
@@ -73,13 +71,11 @@
 
                     @endphp
                     {{$formatted_worktime}}
-
                 </td>
             </tr>
             @endforeach
         </table>
     </div>
-
     <div class="content__pagination">{{ $worktimes->links('vendor.pagination.default') }}</div>
 </div>
 @endsection

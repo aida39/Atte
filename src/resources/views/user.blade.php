@@ -11,7 +11,6 @@
         <div>
             <h1 class="content__heading">ユーザー一覧</h1>
         </div>
-
         <table class="content__table">
             <tr class="content__table-row">
                 <th>名前</th>
@@ -24,7 +23,6 @@
             @endforeach
         </table>
     </div>
-
     <div class="content__pagination">{{ $users->links('vendor.pagination.default') }}</div>
 
 </div>

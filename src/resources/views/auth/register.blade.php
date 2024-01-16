@@ -7,14 +7,14 @@
 @section('content')
 <div class="register__content">
     <div class="register-form__heading">
-        <h2>会員登録</h2>
+        <h1>会員登録</h1>
     </div>
     <form class="form" action="/register" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <input type="text" name="name" value="{{ old('name') }}" placeholder="名前" />
+                <div class="form__input">
+                    <input class="form__input-register" type="text" name="name" value="{{ old('name') }}" placeholder="名前" />
                 </div>
                 <div class="form__error">
                     @error('name')
@@ -25,8 +25,8 @@
         </div>
         <div class="form__group">
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <input type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" />
+                <div class="form__input">
+                    <input class="form__input-register" type="email" name="email" value="{{ old('email') }}" placeholder="メールアドレス" />
                 </div>
                 <div class="form__error">
                     @error('email')
@@ -37,8 +37,8 @@
         </div>
         <div class="form__group">
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <input type="password" name="password" placeholder="パスワード" />
+                <div class="form__input">
+                    <input class="form__input-register" type="password" name="password" placeholder="パスワード" />
                 </div>
                 <div class="form__error">
                     @error('password')
@@ -49,8 +49,8 @@
         </div>
         <div class="form__group">
             <div class="form__group-content">
-                <div class="form__input--text">
-                    <input type="password" name="password_confirmation" placeholder="確認用パスワード" />
+                <div class="form__input">
+                    <input class="form__input-register" type="password" name="password_confirmation" placeholder="確認用パスワード" />
                 </div>
             </div>
         </div>

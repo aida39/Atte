@@ -11,8 +11,6 @@
         <div>
             <h1 class="content__heading">{{ $user['name'] }}さん 勤怠表</h1>
         </div>
-
-
         <table class="content__table">
             <tr class="content__table-row">
                 <th>日付</th>
@@ -69,6 +67,5 @@
         </table>
     </div>
     <div class="content__pagination">{{ $worktimes->links('vendor.pagination.default') }}</div>
-
 </div>
 @endsection

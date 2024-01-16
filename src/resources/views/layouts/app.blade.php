@@ -18,7 +18,6 @@
                 <h1 class="header__logo">
                     Atte
                 </h1>
-
                 <nav>
                     <ul class="header-nav">
                         @if (Auth::check())
@@ -43,11 +42,9 @@
             </div>
         </div>
     </header>
-
     <main>
         @yield('content')
     </main>
-
     <footer class="footer">
         <small class="copyright">Atte, inc.</small>
     </footer>
