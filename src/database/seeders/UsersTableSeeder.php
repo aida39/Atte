@@ -129,7 +129,6 @@ class UsersTableSeeder extends Seeder
             'end_worktime' => '21:39:09',
         ];
         DB::table('worktimes')->insert($param);
-
         $param = [
             'user_id' => 1,
             'date_worktime' => '2024-01-02',
@@ -153,9 +152,44 @@ class UsersTableSeeder extends Seeder
         DB::table('worktimes')->insert($param);
         $param = [
             'user_id' => 10,
+            'date_worktime' => '2024-01-02',
+            'start_worktime' => '09:11:54',
+            'end_worktime' => '20:39:00',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 1,
+            'date_worktime' => '2024-01-03',
+            'start_worktime' => '09:00:14',
+            'end_worktime' => '13:50:32',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 10,
             'date_worktime' => '2024-01-03',
             'start_worktime' => '09:30:34',
             'end_worktime' => '20:00:11',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 1,
+            'date_worktime' => '2024-01-04',
+            'start_worktime' => '09:00:14',
+            'end_worktime' => '17:50:00',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 1,
+            'date_worktime' => '2024-01-05',
+            'start_worktime' => '09:30:22',
+            'end_worktime' => '17:50:32',
+        ];
+        DB::table('worktimes')->insert($param);
+        $param = [
+            'user_id' => 1,
+            'date_worktime' => '2024-01-06',
+            'start_worktime' => '09:00:00',
+            'end_worktime' => '17:50:00',
         ];
         DB::table('worktimes')->insert($param);
 

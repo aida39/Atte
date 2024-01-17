@@ -18,10 +18,10 @@ Route::middleware('auth', 'verified')->controller(TimeController::class)->group(
         Route::get('/', 'index');
         Route::get('/attendance', 'attendance')->name('show_date');
         Route::get('/user', 'user');
-        Route::get('/user/attendance', 'user_attendance');
-        Route::post('/worktime/start', 'start_worktime');
-        Route::post('/worktime/end', 'end_worktime');
-        Route::post('/breaktime/start', 'start_breaktime');
-        Route::post('/breaktime/end', 'end_breaktime');
+        Route::get('/user/attendance', 'userAttendance');
+        Route::post('/worktime/start', 'startWorktime');
+        Route::post('/worktime/end', 'endWorktime');
+        Route::post('/breaktime/start', 'startBreaktime');
+        Route::post('/breaktime/end', 'endBreaktime');
     }
 );
