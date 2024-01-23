@@ -35,14 +35,15 @@ http://localhost/
 
 ## 環境構築
 
- 1. ```docker-compose exec php bash```
- 2. ```composer install```
- 3. .env.exampleファイルから.envを作成し、環境変数を変更  
+ 1. ```docker-compose up -d --build```
+ 2. ```docker-compose exec php bash```
+ 3. ```composer install```
+ 4. .env.exampleファイルから.envを作成し、環境変数を変更  
 DB_CONNECTIONからDB_PASSWORD、MAIL_MAILERからMAIL_FROM_NAMEの項目を修正
- 4. ```php artisan key:generate```
- 5. ```php artisan migrate```
- 6. ```php artisan db:seed```
- 7. ```php artisan schedule:work```
+ 5. ```php artisan key:generate```
+ 6. ```php artisan migrate```
+ 7. ```php artisan db:seed```
+ 8. ```php artisan schedule:work```
 
 ## 補足事項
 開発用の仮想SMTPサーバーとしてMailtrapの使用を想定しています。  
@@ -50,6 +51,8 @@ Mailtrapを使用する場合はサービスの登録と.envファイルの編�
 
 db:seedでは、確認用の仮データとして以下のデータが挿入されます。
 - ユーザーアカウント：user01~user10の10名分のユーザー
-- メールアドレス：user01@example.com~user01@example.com（上記ユーザー名に対応したメールアドレス）
+- メールアドレス：user01@example.com~user10@example.com（上記ユーザー名に対応したメールアドレス）
 - パスワード：coachtech
-- 勤務データ：2024-01-01〜06まで15件のデータ
+- 勤務データ：2024-01-01から06まで15件のデータ
+
+schedule:workでは、日を跨ぐ出勤データに対して、同日23:59:59で自動で退勤処理を行い、翌日00:00:00に出勤処理を行います。
