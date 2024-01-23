@@ -12,8 +12,8 @@ http://localhost/
 特になし
 
 ## 機能一覧
-- 会員登録
-- ログイン
+- 会員登録（メール認証を含む）
+- ログイン・ログアウト
 - 勤務開始・終了時刻の記録
 - 休憩開始・終了時刻の記録
 - 日付別の勤怠データ閲覧（全ユーザー分）
@@ -35,15 +35,16 @@ http://localhost/
 
  1. ```docker-compose exec php bash```
  2. ```composer install```
- 3. .env.exampleファイルから.envを作成し、環境変数を変更
+ 3. .env.exampleファイルから.envを作成し、環境変数を変更  
+　　 DB_CONNECTION~DB_PASSWORD及びMAIL_MAILER~MAIL_FROM_NAMEの記述を修正する
  4. ```php artisan key:generate```
  5. ```php artisan migrate```
  6. ```php artisan db:seed```
  7. ```php artisan schedule:work```
 
 ## 補足事項
-開発用の仮想SMTPサーバーとして、Mailtrapを使用しています
-サービスの登録と.envファイルの編集が必要です
+開発用の仮想SMTPサーバーとしてMailtrapを使用しています。  
+サービスの登録と.envファイルの編集が必要です。
 
 db:seedでは、確認用の仮データとして以下のデータが挿入されます。
 - ユーザーアカウント：user01~user10の10名分のユーザー
