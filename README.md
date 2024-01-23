@@ -6,7 +6,9 @@
 企業内の人事評価のため
 
 ## アプリケーションURL
-http://localhost/
+http://localhost/  
+利用には会員登録が必要です。登録の後、ログインをしてください。  
+会員登録ページ：http://localhost/register
 
 ## 他のリポジトリ
 特になし
@@ -43,8 +45,8 @@ DB_CONNECTIONからDB_PASSWORD、MAIL_MAILERからMAIL_FROM_NAMEの項目を修�
  7. ```php artisan schedule:work```
 
 ## 補足事項
-開発用の仮想SMTPサーバーとしてMailtrapを使用しています。  
-サービスの登録と.envファイルの編集が必要です。
+開発用の仮想SMTPサーバーとしてMailtrapの使用を想定しています。  
+Mailtrapを使用する場合はサービスの登録と.envファイルの編集が必要です。
 
 db:seedでは、確認用の仮データとして以下のデータが挿入されます。
 - ユーザーアカウント：user01~user10の10名分のユーザー
