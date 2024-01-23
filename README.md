@@ -36,7 +36,7 @@ http://localhost/
  1. ```docker-compose exec php bash```
  2. ```composer install```
  3. .env.exampleファイルから.envを作成し、環境変数を変更  
-　　 DB_CONNECTION~DB_PASSWORD及びMAIL_MAILER~MAIL_FROM_NAMEの記述を修正する
+DB_CONNECTIONからDB_PASSWORD、MAIL_MAILERからMAIL_FROM_NAMEの項目を修正
  4. ```php artisan key:generate```
  5. ```php artisan migrate```
  6. ```php artisan db:seed```
